@@ -1,32 +1,17 @@
-<div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
-    <%= recipe.name %>
-  </p>
-
-  <p>
-    <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
-
-  <p>
-    <strong>Cooking time:</strong>
-    <%= recipe.cooking_time %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= recipe.description %>
-  </p>
-
-  <p>
-    <strong>Public:</strong>
-    <%= recipe.public %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= recipe.user_id %>
-  </p>
-
+<div class="card" style="width: 70rem;">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Recipe: </strong><%= recipe.name %></h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Preparation time: </strong><%= recipe.preparation_time %></li>
+    <li class="list-group-item">  <strong>Cooking time: </strong><%= recipe.cooking_time %></li>
+    <li class="list-group-item"><strong>Public: </strong><%= recipe.public %></li>
+  </ul>
+  <div class="card-body">
+    <p class="card-text"> <strong>Description: </strong><%= recipe.description %></p>
+  </div>
+  <div class="card-body">
+    <a href="#" class="card-link">Generate Shopping List</a>
+    <a href="#" class="card-link">Add Ingredient</a>
+  </div>
 </div>
