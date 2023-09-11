@@ -25,7 +25,8 @@ development:
   <<: *default
   database: RecipeApp_RoR_development
   username: postgres
-  password: <%= ENV["HELLORAILS_DATABASE_PASSWORD"] %>
+  # password: <%= ENV["HELLORAILS_DATABASE_PASSWORD"] %>
+  password: ronniebisaso
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -59,6 +60,9 @@ development:
 test:
   <<: *default
   database: RecipeApp_RoR_test
+  username: postgres
+  # password: <%= ENV["HELLORAILS_DATABASE_PASSWORD"] %>
+  password: ronniebisaso
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,4 +88,5 @@ production:
   <<: *default
   database: RecipeApp_RoR_production
   username: postgres
-  password: <%= ENV["HELLORAILS_DATABASE_PASSWORD"] %>
+  # password: <%= ENV["HELLORAILS_DATABASE_PASSWORD"] %>
+  password: ronniebisaso 
