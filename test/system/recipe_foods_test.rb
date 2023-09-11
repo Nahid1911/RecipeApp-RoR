@@ -15,6 +15,7 @@ class RecipeFoodsTest < ApplicationSystemTestCase
     click_on "New recipe food"
 
     fill_in "Quantity", with: @recipe_food.quantity
+    fill_in "Recipe", with: @recipe_food.recipe_id
     fill_in "User", with: @recipe_food.user_id
     click_on "Create Recipe food"
 
@@ -27,6 +28,7 @@ class RecipeFoodsTest < ApplicationSystemTestCase
     click_on "Edit this recipe food", match: :first
 
     fill_in "Quantity", with: @recipe_food.quantity
+    fill_in "Recipe", with: @recipe_food.recipe_id
     fill_in "User", with: @recipe_food.user_id
     click_on "Update Recipe food"
 

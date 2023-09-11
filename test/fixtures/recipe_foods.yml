@@ -2,12 +2,10 @@
 
 one:
   quantity: 1
-  quantity: 1
   user: one
-  user: one
+  recipe: one
 
 two:
   quantity: 1
-  quantity: 1
   user: two
-  user: two
+  recipe: two
