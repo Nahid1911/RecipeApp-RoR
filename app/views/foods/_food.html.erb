@@ -1,4 +1,4 @@
-<div id="<%= dom_id food %>">
+<div id="<%= dom_id food %>" class="d-flex justify-content-between align-items-center border border-dark">
   <p>
     <strong>Name:</strong>
     <%= food.name %>
@@ -10,18 +10,10 @@
   </p>
 
   <p>
-    <strong>Price:</strong>
-    <%= food.price %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= food.quantity %>
-  </p>
-
-  <p>
     <strong>User:</strong>
     <%= food.user_id %>
   </p>
+
+  <%= button_to "Destroy this food", @food, method: :delete %>
 
 </div>
