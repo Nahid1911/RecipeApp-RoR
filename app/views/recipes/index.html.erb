@@ -1,0 +1,7 @@
+<div id="recipes">
+  <% @user_recipes.each do |recipe| %>
+    <%= link_to  user_recipe_path(@user, recipe) do %>
+      <%= render partial: 'recipes/all_recipes', locals: { recipe: recipe } %>
+    <% end %>
+  <% end %>
+</div>
