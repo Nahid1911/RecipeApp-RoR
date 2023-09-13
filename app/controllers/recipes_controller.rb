@@ -12,28 +12,29 @@ class RecipesController < ApplicationController
   end
 
   # # GET /recipes/new
-  # def new
-  #   @recipe = Recipe.new
-  # end
+  def new
+    @recipe = Recipe.new
+  end
 
   # # GET /recipes/1/edit
   # def edit
   # end
 
   # # POST /recipes or /recipes.json
-  # def create
-  #   @recipe = Recipe.new(recipe_params)
+  def create
+    @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
 
-  #   respond_to do |format|
-  #     if @recipe.save
-  #       format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully created." }
-  #       format.json { render :show, status: :created, location: @recipe }
-  #     else
-  #       format.html { render :new, status: :unprocessable_entity }
-  #       format.json { render json: @recipe.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      if @recipe.save
+        format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully created." }
+        format.json { render :show, status: :created, location: @recipe }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @recipe.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # # PATCH/PUT /recipes/1 or /recipes/1.json
   # def update
@@ -74,7 +75,7 @@ class RecipesController < ApplicationController
   #   end
 
   #   # Only allow a list of trusted parameters through.
-  #   def recipe_params
-  #     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public, :user_id)
-  #   end
+    def recipe_params
+      params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public, :user_id)
+    end
 end

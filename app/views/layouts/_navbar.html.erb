@@ -12,6 +12,9 @@
           <%= link_to "Recipes", recipes_path(current_user), class: "nav-link"%>
         </li>
         <li class="nav-item">
+          <%= link_to "Create Recipe", new_recipe_path(current_user), class: "nav-link"%>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="#">Shopping List</a>
         </li>
         <li class="nav-item">
