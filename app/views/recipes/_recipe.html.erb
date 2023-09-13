@@ -33,7 +33,38 @@
     <p class="card-text"> <strong>Description: </strong><%= recipe.description %></p>
   </div>
   <div class="card-body">
-    <a href="#" class="card-link">Generate Shopping List</a>
-    <a href="#" class="card-link">Add Ingredient</a>
+    <%= link_to "Generate Shopping List", new_food_path, class: 'btn btn-outline-dark btn-sm float-start mt-4 mb-4 ml-auto' %>
+    <%= link_to "Add Ingredient", new_recipe_recipe_food_path(recipe.id), class: 'btn btn-outline-dark btn-sm float-start mt-4 mb-4 ml-auto' %>
   </div>
 </div>
+<hr>
+<table class="table table-striped ">
+  <% if @user_food.present? %>
+    <thead>
+      <tr>
+        <th scope="col">Foods</th>
+        <th scope="col">Measurement Unit</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_food.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= food.price %></td>
+          <td>
+            <%= button_to "Delete", food, method: :delete, class: 'btn btn-outline-dark btn-sm float-start' %>
+          </td>
+        </tr>
+      <% end%>
+    </tbody>
+  <% else %>
+    <tbody>
+      <td>
+        <%=  'No foods found please create new food' %>
+      </td>
+    </tbody>
+  <% end %>
+</table>
