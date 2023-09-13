@@ -16,4 +16,10 @@
     </ul>
     <%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark btn-sm float-start m-4 ml-auto' %>
   </div>
+  <div>
+    <% if current_user.present? %>
+    <strong><%= 'User Name: ' %></strong>
+    <%= current_user.name %>
+    <% end %>
+  </div>
 </nav>
