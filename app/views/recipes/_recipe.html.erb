@@ -5,12 +5,29 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><strong>Preparation time: </strong><%= recipe.preparation_time %></li>
     <li class="list-group-item">  <strong>Cooking time: </strong><%= recipe.cooking_time %></li>
-    <li class="list-group-item"><strong>Public: </strong>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-        <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
-      </div>
-      <%= recipe.public %></li>
+    <li class="list-group-item d-flex"><strong>Public:&nbsp; </strong>
+      <%= form_for @recipe, url: toggle_public_recipe_path(@recipe), method: :post, html: { class: "form-inline" } do |form| %>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="recipe[public]" <%= @recipe.public ? 'checked' : '' %>>
+        </div>
+        <%= form.submit "Hidden Save", id: "submitButton", style: "display: none" %>
+      <% end %>
+      <script>
+        const checkbox = document.getElementById("flexSwitchCheckChecked");
+        const submitButton = document.getElementById("submitButton");
+
+        checkbox.addEventListener("change", function() {
+          // Trigger form submission when the checkbox is changed
+          if (this.checked === false) {
+            submitButton.click(); // Programmatically click the submit button
+          }
+          if (this.checked === true) {
+            submitButton.click(); // Programmatically click the submit button
+          }
+        window.location.reload()
+        });
+      </script>
+    </li>
   </ul>
   <div class="card-body">
     <p class="card-text"> <strong>Description: </strong><%= recipe.description %></p>
