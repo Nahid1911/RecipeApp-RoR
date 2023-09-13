@@ -1,7 +1,5 @@
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= link_to  recipe_path(recipe) do %>
-      <%= render partial: 'recipes/all_recipes', locals: { recipe: recipe } %>
-    <% end %>
+    <%= render partial: 'recipes/all_recipes', locals: { recipe: recipe } %>
   <% end %>
 </div>
