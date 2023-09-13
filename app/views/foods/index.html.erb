@@ -1,14 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<%= link_to "New food", new_food_path, class: 'btn btn-outline-dark btn-sm float-start mt-4 mb-4 ml-auto' %>
 
-<h1>Foods</h1>
-
-<div id="foods">
-  <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
+<table class="table table-striped ">
+<thead>
+<tr>
+<th scope="col">Foods</th>
+<th scope="col">Measurement Unit</th>
+<th scope="col">Unit Price</th>
+<th scope="col">Action</th>
+</tr>
+</thead>
+<tbody>
+<% if @user_food.present? %>
+<% @user_food.each do |food| %>
+  <tr>
+  <td><%= food.name %></td>
+  <td><%= food.measurement_unit %></td>
+  <td><%= food.price %></td>
+  <td>
+  <%= button_to "Delete", food, method: :delete, class: 'btn btn-outline-dark btn-sm float-start' %>
+  </td>
+  </tr>
   <% end %>
-</div>
-
-<%= link_to "New food", new_food_path %>
+  <% else  %>
+  <div>
+  <%=  'No foods found please create one' %>
+ </div>
+  <% end %>
+  </tbody>
+  </table>
