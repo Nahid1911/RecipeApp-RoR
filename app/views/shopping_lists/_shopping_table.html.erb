@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <% if @recipe_foods.key?(food.id) %>
+        <% calculated_quantity = @recipe_foods[food.id] - food.quantity %>
+        <% if calculated_quantity > 0 %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= calculated_quantity %></td>
+            <td><%= calculated_quantity * food.price %></td>
+            <td></td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
