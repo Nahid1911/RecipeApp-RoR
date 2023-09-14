@@ -131,7 +131,7 @@ Example commands:
 
  ### Install
 
-Install this project with: ` cd blog-app  `
+Install this project with: ` cd RecipeApp-RoR  `
 ` gem install `
 
 <!--
