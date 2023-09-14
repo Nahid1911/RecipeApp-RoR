@@ -6,8 +6,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @user_recipes = @user.recipes
+    if params[:id] == 'sign_out'
+      sign_out(current_user)
+      redirect_to new_user_session_path, notice: 'You have signed out.'
+    else
+      @user = current_user
+      @user_recipes = @user.recipes
+    end
   end
 
   def new

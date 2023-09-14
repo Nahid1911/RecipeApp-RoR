@@ -1,5 +1,5 @@
 class RecipeFoodsController < ApplicationController
-  before_action :set_recipe_food, only: %i[show edit update destroy]
+  # before_action :set_recipe_food, only: %i[show edit update destroy]
 
   # GET /recipe_foods or /recipe_foods.json
   def index
@@ -11,7 +11,9 @@ class RecipeFoodsController < ApplicationController
 
   # GET /recipe_foods/new
   def new
+    @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.new
+    @available_foods = Food.all
   end
 
   # GET /recipe_foods/1/edit
@@ -20,14 +22,14 @@ class RecipeFoodsController < ApplicationController
   # POST /recipe_foods or /recipe_foods.json
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
+    @recipe_food.food = Food.find(params[:recipe_food][:food_id])
+    @recipe_food.recipe = Recipe.find(params[:recipe_id]) # Set the recipe_id here
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Recipe food was successfully created.' }
-        format.json { render :show, status: :created, location: @recipe_food }
+        format.html { redirect_to recipe_path(@recipe_food.recipe) }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @recipe_food.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -47,10 +49,11 @@ class RecipeFoodsController < ApplicationController
 
   # DELETE /recipe_foods/1 or /recipe_foods/1.json
   def destroy
+    @recipe_food = RecipeFood.find(params[:id])
     @recipe_food.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipe_foods_url, notice: 'Recipe food was successfully destroyed.' }
+      format.html { redirect_to recipe_path, notice: 'Recipe food was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,6 +67,6 @@ class RecipeFoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def recipe_food_params
-    params.require(:recipe_food).permit(:quantity, :user_id, :recipe_id)
+    params.require(:recipe_food).permit(:quantity, :food_id, :recipe_id)
   end
 end
