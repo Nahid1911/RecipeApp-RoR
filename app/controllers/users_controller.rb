@@ -12,8 +12,8 @@ class UsersController < ApplicationController
       sign_out(current_user)
       redirect_to new_user_session_path, notice: 'You have signed out.'
     else
-    @user = current_user
-    @user_recipes = @user.recipes
+      @user = current_user
+      @user_recipes = @user.recipes
     end
   end
 

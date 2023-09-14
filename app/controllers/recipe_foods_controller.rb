@@ -24,17 +24,15 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe_food.food = Food.find(params[:recipe_food][:food_id])
     @recipe_food.recipe = Recipe.find(params[:recipe_id]) # Set the recipe_id here
-  
+
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_path( @recipe_food.recipe)}
+        format.html { redirect_to recipe_path(@recipe_food.recipe) }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
-  
-  
 
   # PATCH/PUT /recipe_foods/1 or /recipe_foods/1.json
   def update
