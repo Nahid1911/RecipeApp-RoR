@@ -55,7 +55,8 @@
           <td><%= recipe_food.quantity %></td>
           <td><%= recipe_food.food.price * recipe_food.quantity %></td>
           <td>
-            <%= button_to "Remove", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class: 'btn btn-outline-dark btn-sm float-start'%>
+            <%= link_to "Modify", recipe_path, method: :get, class: 'btn btn-outline-dark btn-sm float-start'%>
+            <%= button_to "Remove", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class: 'btn btn-outline-danger btn-sm float-start'%>
           </td>
         </tr>
       <% end%>
