@@ -17,7 +17,8 @@ RSpec.describe User, type: :model do
   end
 
   it 'name, email, password should be present' do
-    user = User.new(name: 'User', email: 'user@email', password: '753951', reset_password_token: 'sdwie', confirmation_token: 'sdjfi')
+    user = User.new(name: 'User', email: 'user@email', password: '753951', reset_password_token: 'sdwie',
+                    confirmation_token: 'sdjfi')
     expect(user).to be_valid
   end
 end
