@@ -3,7 +3,9 @@
   <div class="card mb-3" style="max-width: 1100x;">
     <div class="row g-0">
       <div class="col-md-3 p-3">
-        <h4><strong><%= recipe.name %></strong></h4>
+        <%=link_to recipe_path(recipe) do%>
+          <h4><strong><%= recipe.name %></strong></h4>
+        <%end%>
         <p>By: <%= recipe.user.name%></p>
       </div>
       <div class="col-md-8">
