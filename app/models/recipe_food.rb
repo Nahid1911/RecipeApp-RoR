@@ -2,6 +2,8 @@ class RecipeFood < ApplicationRecord
   belongs_to :food
   belongs_to :recipe
 
+  validates :quantity, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
   after_save :update_recipe_ingredient_counter
   after_save :update_recipe_ingredient_value
   after_destroy :update_recipe_ingredient_value_on_destroy
