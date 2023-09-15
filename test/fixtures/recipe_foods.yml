@@ -2,10 +2,8 @@
 
 one:
   quantity: 1
-  user: one
   recipe: one
 
 two:
   quantity: 1
-  user: two
   recipe: two
