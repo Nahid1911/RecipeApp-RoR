@@ -6,11 +6,13 @@
     <li class="list-group-item"><strong>Preparation time: </strong><%= recipe.preparation_time %></li>
     <li class="list-group-item">  <strong>Cooking time: </strong><%= recipe.cooking_time %></li>
     <li class="list-group-item d-flex"><strong>Public:&nbsp; </strong>
+    <% if can? :update, @recipe %>
       <%= form_for @recipe, url: toggle_public_recipe_path(@recipe), method: :post, html: { class: "form-inline" } do |form| %>
         <div class="form-check form-switch">
           <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="recipe[public]" <%= @recipe.public ? 'checked' : '' %>>
         </div>
         <%= form.submit "Hidden Save", id: "submitButton", style: "display: none" %>
+      <% end %>
       <% end %>
       <script>
         const checkbox = document.getElementById("flexSwitchCheckChecked");
@@ -33,9 +35,11 @@
     <p class="card-text"> <strong>Description: </strong><%= recipe.description %></p>
   </div>
   <div class="card-body">
+    <% if can? :update, @recipe %>      
     <%= link_to "Generate Shopping List", new_food_path, class: 'btn btn-outline-dark btn-sm float-start mt-4 mb-4 ml-auto' %>
     <%= link_to "Add Ingredient", new_recipe_recipe_food_path(recipe.id), class: 'btn btn-outline-dark btn-sm float-start mt-4 mb-4 ml-auto' %>
-  </div>
+    <% end %>      
+    </div>
 </div>
 <hr>
 <table class="table table-striped ">
@@ -55,8 +59,10 @@
           <td><%= recipe_food.quantity %></td>
           <td><%= recipe_food.food.price * recipe_food.quantity %></td>
           <td>
+          <% if can? :destroy, @recipe %>
             <%= link_to "Modify", recipe_path, method: :get, class: 'btn btn-outline-dark btn-sm float-start'%>
             <%= button_to "Remove", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class: 'btn btn-outline-danger btn-sm float-start'%>
+            <% end %>
           </td>
         </tr>
       <% end%>
