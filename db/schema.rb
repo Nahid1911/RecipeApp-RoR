@@ -1,5 +1,5 @@
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_15_042838) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_15_042838) do 
   enable_extension "plpgsql"
 
   create_table "foods", force: :cascade do |t|
