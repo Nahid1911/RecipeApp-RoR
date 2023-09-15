@@ -18,8 +18,9 @@
     <%= form.collection_select :food_id, @available_foods, :id, :name, prompt: "Select a food" %>
   </div>
   <div>
+    <br/>
     <div>
-      <%= form.submit %>
+      <%= form.submit class: 'btn btn-outline-success btn-sm float-start'%>
     </div>
   </div>
 <% end %>

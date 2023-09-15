@@ -4,5 +4,7 @@ class ShoppingListsController < ApplicationController
     @foods = Food.all
   end
 
-  def show; end
+  def show
+    @recipes = Recipe.all
+  end
 end

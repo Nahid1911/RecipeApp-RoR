@@ -20,6 +20,7 @@
     <%= form.check_box :public %>
   </div>
   <div>
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-outline-success btn-sm float-start' %>
+    <%= link_to "Back to recipes", recipes_path, class: 'btn btn-outline-secondary btn-sm float-start' %>
   </div>
 <% end %>

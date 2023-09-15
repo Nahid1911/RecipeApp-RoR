@@ -1,2 +1,19 @@
-<h1>ShoppingList#show</h1>
-<p>Find me in app/views/shopping_list/show.html.erb</p>
+<h1>Public Recipes</h1>
+<% @recipes.each do |recipe| %>
+  <div class="card mb-3" style="max-width: 1100x;">
+    <div class="row g-0">
+      <div class="col-md-3 p-3">
+        <%=link_to recipe_path(recipe) do%>
+          <h4><strong><%= recipe.name %></strong></h4>
+        <%end%>
+        <p>By: <%= recipe.user.name%></p>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <p class="card-text">Total food items: <strong><%= recipe.ingredient_counter%></strong></p>
+          <p class="card-text">Total price: <strong><%= recipe.ingredient_value%></strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%>

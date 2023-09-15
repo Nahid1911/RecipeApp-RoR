@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :shopping_lists
   resources :foods, only: [:index, :show, :new, :create, :destroy]
-  resources :recipes, only: [:index, :show, :new, :create, :destroy] do
+  resources :recipes, only: [:index, :public_recipe, :show, :new, :create, :destroy] do
     member do
       post 'toggle_public'
     end
