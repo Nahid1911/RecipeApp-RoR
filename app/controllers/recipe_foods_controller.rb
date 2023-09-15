@@ -14,7 +14,8 @@ class RecipeFoodsController < ApplicationController
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.new
-    @available_foods = Food.all
+    @user = current_user
+    @available_foods = @user.foods
   end
 
   # GET /recipe_foods/1/edit
