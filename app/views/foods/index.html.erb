@@ -1,4 +1,4 @@
-<%= link_to "New food", new_food_path, class: 'btn btn-outline-dark btn-sm float-start mt-4 mb-4 ml-auto' %>
+<%= link_to "Create New food", new_food_path, class: 'btn btn-outline-success btn-sm float-start mt-4 mb-4 ml-auto' %>
 <table class="table table-striped ">
   <% if @user_food.present? %>
     <thead>
@@ -16,7 +16,7 @@
           <td><%= food.measurement_unit %></td>
           <td><%= food.price %></td>
           <td>
-            <%= button_to "Delete", food, method: :delete, class: 'btn btn-outline-dark btn-sm float-start' %>
+            <%= button_to "Delete", food, method: :delete, class: 'btn btn-outline-danger btn-sm float-start' %>
           </td>
         </tr>
       <% end%>
