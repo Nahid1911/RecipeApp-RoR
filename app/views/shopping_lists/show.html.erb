@@ -8,8 +8,8 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <p class="card-text">Total food items: <%= recipe.recipe_foods.count%></p>
-          <p class="card-text">Total price: $203</p>
+          <p class="card-text">Total food items: <strong><%= recipe.ingredient_counter%></strong></p>
+          <p class="card-text">Total price: <strong><%= recipe.ingredient_value%></strong></p>
         </div>
       </div>
     </div>
