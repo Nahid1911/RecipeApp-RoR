@@ -12,7 +12,7 @@ RSpec.describe 'Foods', type: :feature do
   end
 
   it 'should create and delete a food' do
-    visit new_food_path  # Make sure to navigate to the correct page first
+    visit new_food_path # Make sure to navigate to the correct page first
     fill_in 'Name', with: 'Apple'
     fill_in 'Measurement unit', with: 'grams'
     fill_in 'Price', with: '10'
