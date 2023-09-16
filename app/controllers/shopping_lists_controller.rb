@@ -1,7 +1,8 @@
 class ShoppingListsController < ApplicationController
   def index
     @recipe_foods = RecipeFood.group(:food_id).sum(:quantity)
-    @foods = Food.all
+    @user = current_user
+    @foods = @user.foods
   end
 
   def show
