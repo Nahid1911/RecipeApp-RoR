@@ -59,6 +59,9 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 
   gem 'rspec-rails'
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
+  gem 'factory_bot_rails', '~> 6.2'
+  
 end
 
 group :development do
@@ -77,4 +80,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'database_cleaner'
 end
