@@ -22,7 +22,6 @@ REQUIRED SECTIONS:
 After you're finished please remove all the comments and instructions!
 -->
 
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -31,14 +30,14 @@ After you're finished please remove all the comments and instructions!
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
- <!-- - [🚀 Live Demo](#live-demo) -->
+    <!-- - [🚀 Live Demo](#live-demo) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
- <!-- -  [Deployment](#triangular_flag_on_post-deployment) -->
+  <!-- -  [Deployment](#triangular_flag_on_post-deployment) -->
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -88,13 +87,13 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO 
+<!-- LIVE DEMO
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](<replace-with-your-deployment-URL>) 
+- [Live Demo Link](<replace-with-your-deployment-URL>)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
@@ -106,7 +105,7 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need: ` run bundle install `
+In order to run this project you need: `run bundle install`
 
 <!--
 Example command:
@@ -118,7 +117,7 @@ Example command:
 
 ### Setup
 
-Clone this repository to your desired folder: ` @https://github.com/Nahid1911/RecipeApp-RoR.git `
+Clone this repository to your desired folder: `@https://github.com/Nahid1911/RecipeApp-RoR.git`
 
 <!--
 Example commands:
@@ -129,10 +128,10 @@ Example commands:
 ```
 --->
 
- ### Install
+### Install
 
-Install this project with: ` cd RecipeApp-RoR  `
-` gem install `
+Install this project with: `cd RecipeApp-RoR `
+`gem install`
 
 <!--
 Example command:
@@ -145,7 +144,7 @@ Example command:
 
 ### Usage
 
-To run the project, execute the following command:` rails server `
+To run the project, execute the following command:`rails server`
 
 <!--
 Example command:
@@ -157,7 +156,7 @@ Example command:
 
 ### Run tests
 
-To run tests, run the following command: ` bin/rails test test/models/article_test.rb `
+To run tests, run the following command: `bin/rails test test/models/article_test.rb`
 
 <!--
 Example command:
@@ -221,6 +220,7 @@ Feel free to check the [issues page](https://github.com/Nahid1911/RecipeApp-RoR/
 <!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
+
 If you like this project please feel free to check it out on my GitHub and give me a star thanks.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -253,6 +253,6 @@ I would like to thank Microverse, my learning partners for the support upon the 
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/bronnie313/blog-app/blob/develop/LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
