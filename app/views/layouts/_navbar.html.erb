@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light ps-4">
+  <div class="navbar" id="navbarNav">
+    <ul class="nav nav-tabs">
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Foods", foods_path,class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Public Recipes", shopping_list_path(current_user) ,class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Recipes", recipes_path(current_user), class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Create Recipe", new_recipe_path(current_user), class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Shopping List", shopping_lists_path(current_user), class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+      <% else%>
+        <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log In", new_user_session_path, class: 'nav-link' %>
+        </li>
+      <%end%>
+    </ul>
+  </div>
+  <div>
+    <% if current_user.present? %>
+      <strong><%= 'User Name: ' %></strong>
+      <%= current_user.name %>
+    <% end %>
+  </div>
+</nav>
